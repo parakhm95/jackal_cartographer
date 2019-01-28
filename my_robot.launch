@@ -15,8 +15,8 @@
 -->
 
 <launch>
-  <param name="robot_description"
-    textfile="$(find cartographer_ros)/urdf/my_robot.urdf" />
+  <!-- <param name="robot_description"
+    textfile="$(find cartographer_ros)/urdf/my_robot.urdf" /> -->
 
   <node name="robot_state_publisher" pkg="robot_state_publisher"
     type="robot_state_publisher" />
@@ -30,9 +30,9 @@
     <remap from="points2" to="velodyne_points" />
     <remap from="odom" to="odometry/filtered" />
   </node>
-<!-- 
+
   <node name="rviz" pkg="rviz" type="rviz" required="true"
-      args="-d $(find cartographer_ros)/configuration_files/demo_2d.rviz" /> -->
+      args="-d $(find cartographer_ros)/configuration_files/demo_2d.rviz" />
 
   <node name="cartographer_occupancy_grid_node" pkg="cartographer_ros"
       type="cartographer_occupancy_grid_node" args="-resolution 0.05" />
@@ -40,8 +40,8 @@
   <!-- <node pkg="tf" type="static_transform_publisher" name="baselink_broadcaster1" args="0 0 0 0 0 0 1 /world /map 100" /> -->
   <!-- <node pkg="tf" type="static_transform_publisher" name="baselink_broadcaster2" args="0 0 0 0 0 0 1 /world /odom 100" /> -->
   <!-- <node pkg="tf" type="static_transform_publisher" name="baselink_broadcaster3" args="0 0 0 0 0 0 1 /base_link /velodyne 100" /> -->
-  <node pkg="tf" type="static_transform_publisher" name="baselink_broadcaster4" args="0 0 0 0 0 0 1 /map /odom 10" />
-  <node pkg="tf" type="static_transform_publisher" name="baselink_broadcaster5" args="0 0 0.149 0 0 0 1 /front_mount /velodyne 10" />
+  <!-- <node pkg="tf" type="static_transform_publisher" name="baselink_broadcaster4" args="0 0 0 0 0 0 1 /map /odom 10" />
+  <node pkg="tf" type="static_transform_publisher" name="baselink_broadcaster5" args="0 0 0.149 0 0 0 1 /front_mount /velodyne 10" /> -->
 </launch>
 
   
