@@ -42,14 +42,14 @@ options = {
   landmarks_sampling_ratio = 1.,
 }
 
-TRAJECTORY_BUILDER_3D.num_accumulated_range_data = 1
+TRAJECTORY_BUILDER_3D.num_accumulated_range_data = 0
 TRAJECTORY_BUILDER_3D.min_range = 0.1
 TRAJECTORY_BUILDER_3D.max_range = 4.0
-TRAJECTORY_BUILDER_3D.voxel_filter_size = 0.06
--- TRAJECTORY_BUILDER_2D.use_online_correlative_scan_matching = false
--- TRAJECTORY_BUILDER_2D.real_time_correlative_scan_matcher.linear_search_window = 0.1
--- TRAJECTORY_BUILDER_2D.real_time_correlative_scan_matcher.translation_delta_cost_weight = 2.
--- TRAJECTORY_BUILDER_2D.real_time_correlative_scan_matcher.rotation_delta_cost_weight = 4.2
+TRAJECTORY_BUILDER_3D.voxel_filter_size = 0.10
+TRAJECTORY_BUILDER_3D.use_online_correlative_scan_matching = true
+TRAJECTORY_BUILDER_3D.real_time_correlative_scan_matcher.linear_search_window = 0.1
+TRAJECTORY_BUILDER_3D.real_time_correlative_scan_matcher.translation_delta_cost_weight = 5.5
+TRAJECTORY_BUILDER_3D.real_time_correlative_scan_matcher.rotation_delta_cost_weight = 0.5
 
 MAP_BUILDER.use_trajectory_builder_3d = true
 MAP_BUILDER.num_background_threads = 7
@@ -57,8 +57,8 @@ POSE_GRAPH.optimization_problem.huber_scale = 5e2
 POSE_GRAPH.optimize_every_n_nodes = 320
 POSE_GRAPH.constraint_builder.sampling_ratio = 0.03
 POSE_GRAPH.optimization_problem.ceres_solver_options.max_num_iterations = 10
-POSE_GRAPH.constraint_builder.min_score = 0.62
-POSE_GRAPH.constraint_builder.global_localization_min_score = 0.66
+POSE_GRAPH.constraint_builder.min_score = 0.66
+POSE_GRAPH.constraint_builder.global_localization_min_score = 0.70
 -------------------------------------------------------------------------------------
 
 return options
